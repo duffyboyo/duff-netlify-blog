@@ -3,6 +3,7 @@ import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { SocialList } from "../components/SocialList";
+import { motion } from 'framer-motion';
 
 export default function Index() {
   return (
@@ -12,12 +13,56 @@ export default function Index() {
       <TwitterCardMeta url={"/"} />
       <div className="container">
         <div>
-          <h1>
-            Hi, Im <span className="fancy">Adam</span>.
-          </h1>
-          <span className="handle">@duffyboyo</span>
-          <h2>Freelance Software and Web Developer.</h2>
-          <SocialList />
+          <motion.div initial="hidden" animate="visible" variants={{
+            hidden: {
+              scale: .8,
+              opacity: 0,
+            },
+            visible: {
+              scale: [.8, 1.2, 1],
+              opacity: 1,
+              transition: {
+                delay: .2
+              }
+            },
+          }}>
+            <h1>
+              Hi, Im <span className="fancy">Adam</span>.
+            </h1>
+          </motion.div>
+          
+          <motion.div initial="hidden" animate="visible" variants={{
+            hidden: {
+              scale: .8,
+              opacity: 0,
+            },
+            visible: {
+              scale: [.8 , 1],
+              opacity: 1,
+              transition: {
+                delay: .8
+              }
+            },
+          }}>
+            <span className="handle">@duffyboyo</span>
+          </motion.div>
+
+          <motion.div initial="hidden" animate="visible" variants={{
+            hidden: {
+              scale: .8,
+              opacity: 0,
+            },
+            visible: {
+              scale: [0.8, 1],
+              opacity: [0.4, 0.8, 1],
+              transition: {
+                delay: 1.2
+              }
+            },
+          }}>
+            <h2>Freelance Software and Web Developer.</h2>
+            <SocialList />
+          </motion.div>
         </div>
       </div>
       <style jsx>{`
