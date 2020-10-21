@@ -1,7 +1,8 @@
 import React from "react";
-import Twitter from "../assets/twitter-alt.svg";
-import GitHub from "../assets/github-alt.svg";
+// import Twitter from "../assets/twitter-alt.svg";
+// import GitHub from "../assets/github-alt.svg";
 import config from "../lib/config";
+import { GitHub, Twitter } from 'react-feather';
 
 export function SocialList({}) {
   return (
@@ -12,7 +13,7 @@ export function SocialList({}) {
         target="_blank"
         rel="noopener"
       >
-        <Twitter width={24} height={24} fill={"#222"} />
+        <Twitter width={24} height={24} fill={"#999"} />
       </a>
       <a
         title="GitHub"
@@ -20,7 +21,7 @@ export function SocialList({}) {
         target="_blank"
         rel="noopener"
       >
-        <GitHub width={24} height={24} fill={"#222"} />
+        <GitHub width={24} height={24} fill={"#999"} />
       </a>
       <style jsx>{`
         a {
