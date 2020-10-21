@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import { Truck } from 'react-feather'
 
 type Props = {
-    posts: PostContent[];
+    posts: PortfolioContent[];
     tags: TagContent[];
     pagination: {
       current: number;

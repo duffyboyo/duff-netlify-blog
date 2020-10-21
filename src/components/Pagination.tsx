@@ -37,8 +37,10 @@ export default function Pagination({ current, pages, link }: Props) {
           font-size: 1.25rem;
         }
         a.active {
-          color: #222;
+          color: rgb(230, 230, 230);
           font-weight: bold;
+          border: 3px solid #9b9b9b;
+          padding: 5px;
         }
       `}</style>
     </ul>
