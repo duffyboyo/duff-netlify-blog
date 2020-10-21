@@ -41,7 +41,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 }
 .waveWrapper {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
