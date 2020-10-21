@@ -64,6 +64,7 @@ export default function Index() {
             <SocialList />
           </motion.div>
         </div>
+        
       </div>
       <style jsx>{`
         .container {

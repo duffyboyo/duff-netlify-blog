@@ -32,6 +32,7 @@ export default function Navigation() {
           {`
             .container {
               width: 0;
+              background: none;
             }
             ul {
               opacity: 0;
@@ -56,15 +57,17 @@ export default function Navigation() {
               transform: translateY(0);
             }
             li {
+              background: none;
               margin-bottom: 1.75rem;
               font-size: 2rem;
               padding: 0 1.5rem 0 0;
             }
             li:last-child {
+              background: none;
               margin-bottom: 0;
             }
             .active {
-              color: #222;
+              color: rgb(230, 230, 230);
             }
 
             @media (min-width: 769px) {
@@ -78,10 +81,14 @@ export default function Navigation() {
                 top: auto;
                 display: block;
                 transform: translateY(0);
+                background: none;
+                color: rgb(45,45,45);
               }
               li {
                 font-size: 1rem;
                 padding: 0;
+                background: none;
+                color: rgb(45,45,45);
               }
             }
           `}
