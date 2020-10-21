@@ -1,31 +1,37 @@
+import { GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
+import PostList from "../../components/PostList";
+import config from "../../lib/config";
+import { countPortfolio, listPortfolioContent, PortfolioContent } from "../../lib/portfolio";
+import { listTags, TagContent } from "../../lib/tags";
 import { motion } from 'framer-motion'
-export default function Portfolio() {
+import { Truck } from 'react-feather'
+
+type Props = {
+    posts: PostContent[];
+    tags: TagContent[];
+    pagination: {
+      current: number;
+      pages: number;
+    };
+  };
+
+  
+export default function Index({portfolio, tags, pagination}) {
+    const url = "/portfolio";
+    const title = "Portfolio";
     return (
         <Layout>
-            <BasicMeta url={"/"} />
-            <OpenGraphMeta url={"/"} />
-            <TwitterCardMeta url={"/"} />
+            <BasicMeta url={url} title={title} />
+            <OpenGraphMeta url={url} title={title} />
+            <TwitterCardMeta url={url} title={title} />
             <div className="container">
-                <motion.div initial="hidden" animate="visible" variants={{
-                    hidden: {
-                    scale: .8,
-                    opacity: 0,
-                    },
-                    visible: {
-                    scale: [.8, 1.2, 1],
-                    opacity: 1,
-                    transition: {
-                        delay: .2
-                    }
-                    },
-                }}>
-                    <h1>Portfolio coming soon...</h1>
-                </motion.div>
+                <h1>Portfolio under construction <Truck /> </h1>
             </div>
+            <PostList posts={portfolio} tags={tags} pagination={pagination} />
             <style jsx>
                 {
                     `
@@ -46,3 +52,20 @@ export default function Portfolio() {
         </Layout>
     );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+    const portfolio = listPortfolioContent(1, config.posts_per_page);
+    const tags = listTags();
+    const pagination = {
+      current: 1,
+      pages: Math.ceil(countPortfolio() / config.posts_per_page),
+    };
+    return {
+      props: {
+        portfolio,
+        tags,
+        pagination,
+      },
+    };
+  };
+
