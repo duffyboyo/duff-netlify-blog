@@ -11,3 +11,7 @@ tags:
     name: mdx
   - slug: markdown
     name: markdown
+  - slug: smarthome
+    name: Smart Home
+  - slug: node
+    name: Node JS
