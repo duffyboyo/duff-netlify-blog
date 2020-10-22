@@ -66,7 +66,7 @@ export default function Index() {
                       .form-styling {
                         width: 100%;
                         height: 35px;
-                        padding-left: 5px;
+                        padding-left: 15px;
                         margin-left: 20px;
                         margin-right: 25px;
                         border: none;
@@ -105,6 +105,7 @@ export default function Index() {
                           resize: none;
                           padding: 5px;
                           color: #fff;
+                          padding-top: 10px;
                       }
 
                       .contact-header-wrapper {
