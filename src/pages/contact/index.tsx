@@ -19,7 +19,7 @@ export default function Index() {
                         </div>
                     </div>
                     <div className="col-lg-7">
-                        <form name="contact" data-netlify-recaptcha="true" method="POST" className={"contact-form"} data-netlify="true" action="/contact/success">
+                        <form name="contact" netlify-recaptcha="true" method="POST" className={"contact-form"} data-netlify="true" action="/contact/success">
                             <div className={"row"}>
                                 <label htmlFor="name">Name</label>
                                 <input className={"form-styling"} type="text" required id="name" name="name" />
@@ -32,10 +32,11 @@ export default function Index() {
                                 <label htmlFor="message">Message</label>
                                 <textarea required className={"form-styling"} id="message" name="message"></textarea>
                             </div>
+                            <div data-netlify-recaptcha="true"></div>
                             <div className={"row squish"}>
                                 <button className={"btn-signin"} type="submit">Send</button>
                             </div>
-                            <input type="hidden" name="form-name" value="contact" />
+                            <input type="hidden" name="contact" value="contact" />
 
                         </form>
                     </div>
