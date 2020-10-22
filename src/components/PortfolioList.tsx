@@ -4,7 +4,8 @@ import PortfolioItem from "./PortfolioItem";
 import TagLink from "./TagLink";
 import Pagination from "./Pagination";
 import { TagContent } from "../lib/tags";
-
+import Link from "next/link";
+import { Row, Col } from 'react-flexbox-grid/dist/react-flexbox-grid';
 type Props = {
   portfolio: PortfolioContent[];
   tags: TagContent[];
@@ -18,14 +19,18 @@ export default function PortfolioList({ portfolio, tags, pagination }: Props) {
     <div className={"container"}>
       <div className={"posts"}>
         <div className={"post-list"}>
-            <div className={"row"}>
+            <Row>
               {portfolio.map((it, i) => (
-                  <div className="col-lg">
-                    <img className={"responsive"} src={"/images/" + it.image} /> 
+                  <Col md={4}>
+                    <Link href={"/portfolio/" + it.slug}>
+                      <a>
+                        <img className={"responsive"} src={"/images/" + it.image} /> 
+                      </a>
+                    </Link>
                     <PortfolioItem portfolio={it} />
-                  </div>
+                  </Col>
               ))}
-            </div>
+            </Row>
           <Pagination
             current={pagination.current}
             pages={pagination.pages}

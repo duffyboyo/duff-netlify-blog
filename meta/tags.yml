@@ -1,17 +1,4 @@
 tags:
-  - slug: document
-    name: document
-  - slug: mock
-    name: mock
-  - slug: style
-    name: style
-  - slug: license
-    name: license
-  - slug: mdx
-    name: mdx
-  - slug: markdown
-    name: markdown
-  - slug: smarthome
-    name: Smart Home
-  - slug: node
-    name: Node JS
+  - slug: announcement
+    name: announcement
+  

@@ -1,9 +1,10 @@
 import "normalize.css";
-import "../../public/styles/flexboxgrid.min.css"
 import { AppProps } from "next/app";
 // NOTE: Do not move the styles dir to the src.
 // They are used by the Netlify CMS preview feature.
+import 'react-flexbox-grid/dist/react-flexbox-grid.css'
 import "../../public/styles/global.css";
+
 import { AnimatePresence, motion  } from 'framer-motion' 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
