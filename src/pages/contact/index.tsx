@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
-import BasicMeta from "../components/meta/BasicMeta";
-import OpenGraphMeta from "../components/meta/OpenGraphMeta";
-import TwitterCardMeta from "../components/meta/TwitterCardMeta";
+import Layout from "../../components/Layout";
+import BasicMeta from "../../components/meta/BasicMeta";
+import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
+import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 
 export default function Index() {
     return (
@@ -19,22 +19,24 @@ export default function Index() {
                         </div>
                     </div>
                     <div className="col-lg-7">
-                        <form name="contact" method="POST" className={"contact-form"} data-netlify="true">
+                        <form name="contact" data-netlify-recaptcha="true" method="POST" className={"contact-form"} data-netlify="true" action="/contact/success">
                             <div className={"row"}>
                                 <label htmlFor="name">Name</label>
-                                <input className={"form-styling"} type="text" id="name" name="name" />
+                                <input className={"form-styling"} type="text" required id="name" name="name" />
                             </div>
                             <div className={"row"}>
                                 <label htmlFor="email">Email</label>
-                                <input className={"form-styling"} type="text" id="email" name="email" />
+                                <input className={"form-styling"} type="email" required id="email" name="email" />
                             </div>
                             <div className={"row"}>
                                 <label htmlFor="message">Message</label>
-                                <textarea className={"form-styling"} id="message" name="message"></textarea>
+                                <textarea required className={"form-styling"} id="message" name="message"></textarea>
                             </div>
                             <div className={"row squish"}>
                                 <button className={"btn-signin"} type="submit">Send</button>
                             </div>
+                            <input type="hidden" name="form-name" value="contact" />
+
                         </form>
                     </div>
                 </div>
