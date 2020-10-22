@@ -18,7 +18,6 @@ export default function Index() {
                             <p className="wrapy">If interested in working with me, or have something you want me to take a look at? Use this form!</p>
                         </div>
                     </div>
-                    <a href=""></a>
                     <div className="col-lg-7">
                         <form name="contact"  method="POST" className={"contact-form"} data-netlify="true" data-netlify-recaptcha="true" action="/contact/success">
                             <div className={"row"}>
