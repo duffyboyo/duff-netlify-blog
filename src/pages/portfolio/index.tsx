@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
-import PostList from "../../components/PostList";
+import PortfolioList from "../../components/PortfolioList";
 import config from "../../lib/config";
 import { countPortfolio, listPortfolioContent, PortfolioContent } from "../../lib/portfolio";
 import { listTags, TagContent } from "../../lib/tags";
@@ -28,10 +28,10 @@ export default function Index({portfolio, tags, pagination}) {
             <BasicMeta url={url} title={title} />
             <OpenGraphMeta url={url} title={title} />
             <TwitterCardMeta url={url} title={title} />
-            <div className="container">
+            {/* <div className="container">
                 <h1>Portfolio under construction <Truck /> </h1>
-            </div>
-            <PostList posts={portfolio} tags={tags} pagination={pagination} />
+            </div> */}
+            <PortfolioList portfolio={portfolio} tags={tags} pagination={pagination} />
             <style jsx>
                 {
                     `

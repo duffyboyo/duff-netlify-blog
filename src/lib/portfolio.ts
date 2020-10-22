@@ -10,6 +10,7 @@ export type PortfolioContent = {
   readonly title: string;
   readonly slug: string;
   readonly tags?: string[];
+  readonly image: string;
 };
 
 let portfolioCache: PortfolioContent[];
@@ -38,6 +39,7 @@ function fetchPortfolioContent(): PortfolioContent[] {
         title: string;
         tags: string[];
         slug: string;
+        image: string;
       };
       const slug = fileName.replace(/\.mdx$/, "");
 

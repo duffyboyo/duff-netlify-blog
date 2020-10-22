@@ -1,20 +1,15 @@
 import "normalize.css";
+import "../../public/styles/flexboxgrid.min.css"
 import { AppProps } from "next/app";
 // NOTE: Do not move the styles dir to the src.
 // They are used by the Netlify CMS preview feature.
 import "../../public/styles/global.css";
-import { motion } from 'framer-motion' 
+import { AnimatePresence, motion  } from 'framer-motion' 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <motion.span key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
-      pageInitial: {
-        opacity: 0
-      },
-      pageAnimate: {
-        opacity: [0.5, 0.75, 1]
-      },
-    }}>
-      <div className="waveWrapper waveAnimation">
+    <span>
+
+    <div className="waveWrapper waveAnimation">
           <div className="waveWrapperInner bgTop">
             <div className="wave waveTop" style={{backgroundImage: "url('https://duffyboyo.com/images/wave-top.png')"}}></div>
           </div>
@@ -25,18 +20,32 @@ export default function App({ Component, pageProps, router }: AppProps) {
             <div className="wave waveBottom" style={{backgroundImage: "url('https://duffyboyo.com/images/wave-bot.png')"}}></div>
           </div>
         </div>
-      <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <motion.span key={router.route} exit="pageExit" initial="pageInitial" animate="pageAnimate" variants={{
+          pageInitial: {
+            opacity: 0
+          },
+          pageAnimate: {
+            opacity: 1
+          },
+          pageExit: {
+            opacity: 0
+          }
+        }}>
+          <Component key={router.route} {...pageProps} />
+        </motion.span>
+        </AnimatePresence>
       <style jsx>
         {`
 @keyframes move_wave {
   0% {
-      transform: translateX(0) translateZ(0) scaleY(1)
+    transform: translateX(0) translateZ(0) scaleY(1)
   }
   50% {
-      transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    transform: translateX(-25%) translateZ(0) scaleY(0.55)
   }
   100% {
-      transform: translateX(-50%) translateZ(0) scaleY(1)
+    transform: translateX(-50%) translateZ(0) scaleY(1)
   }
 }
 .waveWrapper {
@@ -81,10 +90,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
   background-size: 50% 100px;
 }
 .waveAnimation .waveTop {
-animation: move-wave 3s;
- -webkit-animation: move-wave 3s;
- -webkit-animation-delay: 1s;
- animation-delay: 1s;
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 .waveMiddle {
   background-size: 50% 120px;
@@ -98,8 +107,8 @@ animation: move-wave 3s;
 .waveAnimation .waveBottom {
   animation: move_wave 15s linear infinite;
 }
-        `}
+`}
       </style>
-    </motion.span>
+</span>
   );
 }

@@ -26,8 +26,8 @@ export default function Navigation() {
                 blog
               </a>
             </Link>
-            </li>
-            <li>
+          </li>
+          <li>
             <Link href="/portfolio">
               <a
                 className={
@@ -35,6 +35,17 @@ export default function Navigation() {
                 }
               >
                 portfolio
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a
+                className={
+                  router.pathname.startsWith("/contact") ? "active" : null
+                }
+              >
+                contact
               </a>
             </Link>
           </li>
@@ -64,7 +75,7 @@ export default function Navigation() {
               transition: opacity 200ms;
             }
             .active ul {
-              opacity: 1;
+              opacity: 0.9;
               transform: translateY(0);
             }
             li {
@@ -73,12 +84,17 @@ export default function Navigation() {
               font-size: 2rem;
               padding: 0 1.5rem 0 0;
             }
+
+            li a {
+              color: #888;
+            }
+
             li:last-child {
               background: none;
               margin-bottom: 0;
             }
-            .active {
-              color: rgb(230, 230, 230);
+            li .active {
+              color: #000;
             }
 
             @media (min-width: 769px) {
@@ -93,13 +109,16 @@ export default function Navigation() {
                 display: block;
                 transform: translateY(0);
                 background: none;
-                color: rgb(45,45,45);
+                color: #888;
               }
               li {
                 font-size: 1rem;
                 padding: 0;
                 background: none;
-                color: rgb(45,45,45);
+              }
+
+              ul li a.active {
+                color: #fff !important;
               }
             }
           `}
