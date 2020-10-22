@@ -6,9 +6,9 @@ import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 export default function Index() {
     return (
         <Layout>
-            <BasicMeta url={"/"} />
-            <OpenGraphMeta url={"/"} />
-            <TwitterCardMeta url={"/"} />
+            <BasicMeta url={"/contact"} />
+            <OpenGraphMeta url={"/contact"} />
+            <TwitterCardMeta url={"/contact"} />
             <div className={"container"}>
                 <div className={"row"}>
                     <div className={"col-lg-5"}>
@@ -18,8 +18,9 @@ export default function Index() {
                             <p className="wrapy">If interested in working with me, or have something you want me to take a look at? Use this form!</p>
                         </div>
                     </div>
+                    <a href=""></a>
                     <div className="col-lg-7">
-                        <form name="contact" netlify-recaptcha="true" method="POST" className={"contact-form"} data-netlify="true" action="/contact/success">
+                        <form name="contact"  method="POST" className={"contact-form"} data-netlify="true" data-netlify-recaptcha="true" action="/contact/success">
                             <div className={"row"}>
                                 <label htmlFor="name">Name</label>
                                 <input className={"form-styling"} type="text" required id="name" name="name" />
@@ -34,10 +35,8 @@ export default function Index() {
                             </div>
                             <div data-netlify-recaptcha="true"></div>
                             <div className={"row squish"}>
-                                <button className={"btn-signin"} type="submit">Send</button>
+                                <button name="submit" className={"btn-signin"} type="submit">Send</button>
                             </div>
-                            <input type="hidden" name="contact" value="contact" />
-
                         </form>
                     </div>
                 </div>
