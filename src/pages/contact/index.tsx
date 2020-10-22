@@ -31,6 +31,7 @@ export default function Index() {
                             <div className={"row"}>
                                 <label htmlFor="message">Message</label>
                                 <textarea required className={"form-styling"} id="message" name="message"></textarea>
+                                <input type="hidden" name="form-name" value="contact" />
                             </div>
                             <div data-netlify-recaptcha="true"></div>
                             <div className={"row squish"}>
