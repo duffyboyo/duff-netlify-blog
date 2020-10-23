@@ -10,6 +10,7 @@ export default function PortfolioItem({ portfolio }: Props) {
   return (
     <Link href={"/portfolio/" + portfolio.slug}>
       <a>
+        <img src={"/images/" + portfolio.image} className={"responsive"} />
         <h2>{portfolio.title}</h2>
         <style jsx>
           {`

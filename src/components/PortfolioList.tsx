@@ -21,12 +21,7 @@ export default function PortfolioList({ portfolio, tags, pagination }: Props) {
         <div className={"post-list"}>
             <Row>
               {portfolio.map((it, i) => (
-                  <Col md={4}>
-                    <Link href={"/portfolio/" + it.slug}>
-                      <a>
-                        <img className={"responsive"} src={"/images/" + it.image} /> 
-                      </a>
-                    </Link>
+                  <Col md={6}>
                     <PortfolioItem portfolio={it} />
                   </Col>
               ))}
