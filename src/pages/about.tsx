@@ -4,13 +4,16 @@ import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { SocialList } from "../components/SocialList";
 import { motion } from 'framer-motion';
+import Link from "next/link";
+import { AtSign, Grid } from "react-feather";
+
 
 export default function Index() {
   return (
     <Layout>
-      <BasicMeta url={"/"} title="Hi, Im Adam." description="Freelance Software and Web Developer." />
-      <OpenGraphMeta url={"/"} title="Hi, Im Adam." description="Freelance Software and Web Developer." />
-      <TwitterCardMeta url={"/"} title="Hi, Im Adam." description="Freelance Software and Web Developer." />
+      <BasicMeta url={"/"} />
+      <OpenGraphMeta url={"/"} />
+      <TwitterCardMeta url={"/"} />
       <div className="container">
         <div>
           <motion.div initial="hidden" animate="visible" variants={{
@@ -27,24 +30,8 @@ export default function Index() {
             },
           }}>
             <h1>
-              Hi, Im <span className="fancy">Adam</span>.
+              So you want to know more<span className="fancy">...</span>
             </h1>
-          </motion.div>
-          
-          <motion.div initial="hidden" animate="visible" variants={{
-            hidden: {
-              scale: .8,
-              opacity: 0,
-            },
-            visible: {
-              scale: [.8 , 1],
-              opacity: 1,
-              transition: {
-                delay: .8
-              }
-            },
-          }}>
-            <span className="handle">@duffyboyo</span>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={{
@@ -60,8 +47,10 @@ export default function Index() {
               }
             },
           }}>
-            <h2>Freelance Software and Web Developer.</h2>
-            <SocialList />
+            <p>I am a developer based in the UK with a wide range of experience.</p>
+            <p>Most recently I have been exploring the idea of sustaining myself as a freelance developer and feel I can bring my experience in a self sustaining manner.</p>
+            <p>I am currently looking for more work, if you are interested please <span className="fancy-link"><Link href={"/contact"}><span>contact me</span></Link></span></p>
+            <p>If you are interested in some of my previous work please take a look at my <span className="fancy-link"><Link href={"/portfolio"}><span>portfolio</span></Link></span></p>
           </motion.div>
         </div>
         
@@ -86,6 +75,14 @@ export default function Index() {
         }
         .fancy {
           color: #15847d;
+        }
+
+
+
+        .fancy-link {
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
         }
         .handle {
           display: inline-block;
