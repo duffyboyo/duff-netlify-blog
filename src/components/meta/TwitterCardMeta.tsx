@@ -5,7 +5,7 @@ type Props = {
   url: string;
   title?: string;
   description?: string;
-  image: string;
+  image?: string;
 };
 export default function TwitterCardMeta({ url, title, description, image }: Props) {
   return (

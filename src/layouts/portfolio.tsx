@@ -46,7 +46,7 @@ export default function Index({
         <TwitterCardMeta
           url={`/posts/${slug}`}
           title={title}
-          image={`/images/${image}`}
+          image={image}
           description={description}
         />
         <OpenGraphMeta
