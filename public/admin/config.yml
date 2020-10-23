@@ -69,42 +69,42 @@ collections:
               - label: "Introduction"
                 name: "introduction"
                 widget: "text"
-    - name: "tags"
-      label: "Tags"
-      file: "meta/tags.yml"
-      description: "List of tags"
-      fields:
-        - name: portfoliotags
-          label: Portfolio Tags
-          label_singular: "P'Tag"
-          widget: list
-          fields:
-            - label: "Slug"
-              name: "slug"
-              widget: "string"
-              hint: "The part of a URL identifies the tag"
-            - label: "Display Name"
-              name: "name"
-              widget: "string"
-              hint: "Tag name for displaying on the site"
-              - name: "tags"
-              label: "Tags"
-              file: "meta/ptags.yml"
-              description: "List of tags"
-              fields:
-                - name: tags
-                  label: Tags
-                  label_singular: "Tag"
-                  widget: list
-                  fields:
-                    - label: "Slug"
-                      name: "slug"
-                      widget: "string"
-                      hint: "The part of a URL identifies the tag"
-                    - label: "Display Name"
-                      name: "name"
-                      widget: "string"
-                      hint: "Tag name for displaying on the site"
+      - name: "tags"
+        label: "Tags"
+        file: "meta/tags.yml"
+        description: "List of tags"
+        fields:
+          - name: tags
+            label: Tags
+            label_singular: "Tag"
+            widget: list
+            fields:
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "The part of a URL identifies the tag"
+              - label: "Display Name"
+                name: "name"
+                widget: "string"
+                hint: "Tag name for displaying on the site"
+      - name: "tags"
+        label: "Tags"
+        file: "meta/tags.yml"
+        description: "List of tags"
+        fields:
+          - name: tags
+            label: Tags
+            label_singular: "Tag"
+            widget: list
+            fields:
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "The part of a URL identifies the tag"
+              - label: "Display Name"
+                name: "name"
+                widget: "string"
+                hint: "Tag name for displaying on the site"
 
   - name: "posts"
     label: "Posts"
