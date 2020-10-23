@@ -6,9 +6,9 @@ import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 export default function Index() {
     return (
         <Layout>
-            <BasicMeta url={"/"} />
-            <OpenGraphMeta url={"/"} />
-            <TwitterCardMeta url={"/"} />
+            <BasicMeta url={"/contact/success"} />
+            <OpenGraphMeta url={"/contact/success"} />
+            <TwitterCardMeta url={"/contact/success"} />
             <div className={"container"}>
                 <div className={"row"}>
                     <div className={"col-lg-12"}>
