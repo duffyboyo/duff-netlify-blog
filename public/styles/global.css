@@ -49,3 +49,9 @@ a:hover {
   width: 100%;
   height: auto;
 }
+
+.fancy-link {
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
