@@ -17,6 +17,7 @@ export default function Index() {
                                 <h1>Contact</h1>
                                 <span className="handle">talk to me</span>
                                 <p className="wrapy">If interested in working with me, or have something you want me to take a look at? Use this form!</p>
+                                <p>Alternatively contact me using the following email, <a href="mailto:enquiry@duffyboyo.com">mail@duffyboyo.com</a></p>
                             </div>
                         </Col>
                         <Col md={7}>
