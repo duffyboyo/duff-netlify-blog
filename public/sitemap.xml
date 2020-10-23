@@ -18,7 +18,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://duffyboyo.com/posts</loc>
+  <loc>https://duffyboyo.com/blog</loc>
   <lastmod>2020-10-23T16:00:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -33,12 +33,12 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://duffyboyo.com/posts/welcome</loc>
+  <loc>https://duffyboyo.com/blog/welcome</loc>
   <lastmod>2020-10-23T16:00:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://duffyboyo.com/posts/tags/announcement</loc>
+  <loc>https://duffyboyo.com/blog/tags/announcement</loc>
   <lastmod>2020-10-23T16:00:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
